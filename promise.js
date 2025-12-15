@@ -90,3 +90,40 @@ function squarePositive(n){
 }
 // squarePositive(3).then((val)=>{console.log(val)}).catch((err)=>{console.log(err)})
 // squarePositive(-1).then((val)=>{console.log(val)}).catch((err)=>{console.log(err)})
+
+function getMessage() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(`Hello from promise`)
+        }, 500);
+    })
+}
+// getMessage().then((data)=>{console.log(data)})
+
+function getRandomNumber() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(Math.floor(Math.random() * 10) + 1)
+        }, 700);
+    })
+}
+// getRandomNumber().then(data => console.log(data))
+// console.log(await getRandomNumber());
+
+function checkEven(n) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            n % 2 ? reject(`Odd number`) : resolve(`Even number`)
+        }, 500);
+    })
+}
+// checkEven(1).then(data => console.log(data)).catch(err => console.log(err))
+
+function toUpperAsync(text) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            typeof (text) == `string` ? resolve(text.toUpperCase()) : reject(`Empty string`)
+        }, 600);
+    })
+}
+// toUpperAsync(5).then(data => console.log(data)).catch(err => console.log(err))
