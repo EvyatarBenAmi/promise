@@ -43,4 +43,23 @@ function validateAge(age) {
         }
     })
 }
-const a = await validateAge(17)
+// const a = await validateAge(17)
+
+function getNumber() {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(3)
+        }, 400);
+    })
+}
+function square(n) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(n * n)
+        }, 400);
+    })
+}
+async function result() {
+    console.log(await square(await getNumber()));
+}
+// result()
